@@ -1,7 +1,6 @@
 import prisma from "../../lib/prisma";
 
 export default async function handle(req, res) {
-  res.setHeader('Access-Control-Allow-Origin', '*')
   const { title, description, endDate, Goal, logolink } = req.body;
   if (title) {
     const result = await prisma.event.create({
