@@ -1,0 +1,21 @@
+generator client {
+    provider        = "prisma-client-js"
+    previewFeatures = ["dataProxy"]
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model Event {
+    id          Int    @id @default(autoincrement())
+    title       String
+    description String
+    endDate     String
+    Goal        Int
+    logolink    String
+
+
+    @@map(name: "events")
+}
