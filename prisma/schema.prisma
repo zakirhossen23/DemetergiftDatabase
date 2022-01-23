@@ -15,22 +15,22 @@ model Event {
     endDate     String
     Goal        Int
     logolink    String
+    wallet      String
 
-
-    @@map(name: "events")
+    @@map("events")
 }
 
 model Nftcryptopunk {
     id          Int    @id @default(autoincrement())
-    eventid     Int
     name        String
     description String
     Bidprice    Float
     price       Float
     type        String
     image       String
+    eventid     Int
 
-    @@map(name: "nftcryptopunks")
+    @@map("nftcryptopunks")
 }
 
 model tokenbid {

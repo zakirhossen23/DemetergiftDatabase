@@ -1,7 +1,7 @@
 import prisma from "../../lib/prisma";
 
 export default async function handle(req, res) {
-  const { title, description, endDate, Goal, logolink } = req.body;
+  const { title, description, endDate, Goal, logolink, wallet } = req.body;
   if (title) {
     const result = await prisma.event.create({
       data: {
@@ -9,7 +9,8 @@ export default async function handle(req, res) {
         description: description,
         endDate: endDate,
         Goal: Goal,
-        logolink: logolink
+        logolink: logolink,
+        wallet: wallet,
       },
     });
     res.json(result);
