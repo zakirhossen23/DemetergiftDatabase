@@ -11,6 +11,21 @@ export default async function handle(req, res) {
                 Bidprice: Bidprice,
             },
         });
+        const highestToken = await prisma.nftcryptopunk.findMany({
+            where: { id: Tokenid }
+        });
+
+        if (Bidprice > highestToken[0].price) {
+
+            await prisma.nftcryptopunk.update({
+                where: { id: Tokenid },
+                data: {
+                    price: Bidprice,
+                },
+            });
+        }
+
+
         res.json(result);
     }
     return (
