@@ -25,11 +25,18 @@ model Nftcryptopunk {
     eventid     Int
     name        String
     description String
-    Bidprice    Int
-    price       Int
+    Bidprice    Float
+    price       Float
     type        String
     image       String
 
-
     @@map(name: "nftcryptopunks")
+}
+
+model tokenbid {
+    id       Int    @id @default(autoincrement())
+    Tokenid  Int
+    Date     String
+    UserName String
+    Bidprice Float
 }
