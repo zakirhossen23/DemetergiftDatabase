@@ -9,14 +9,15 @@ datasource db {
 }
 
 model Event {
-  id          Int     @id @default(autoincrement())
-  title       String
-  description String
-  endDate     String
-  Goal        Int
-  logolink    String
-  wallet      String
-  wallettype  String?
+  id              Int     @id @default(autoincrement())
+  title           String
+  description     String
+  endDate         String
+  Goal            Int
+  logolink        String
+  wallet          String
+  wallettype      String?
+  eventcategories String?
 
   @@map("events")
 }
