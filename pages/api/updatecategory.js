@@ -6,7 +6,7 @@ export default async function handle(req, res) {
         const selectedCategories = await prisma.eventcategories.findMany({
             where: { id: id }
         });
-        const perpeice =  selectedCategories[0].price/ selectedCategories[0].amount;
+        const perpeice =  parseInt(selectedCategories[0].price/ selectedCategories[0].amount);
         const result =    await prisma.eventcategories.update({
                 where: { id: id },
                 data: {
